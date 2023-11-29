@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import Modal from "react-modal";
-import "../edit/formEdit.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import EditFormContent from "./EditFormContent";
+import SuccessModal from "../modal/SuccessModal";
+import ConfirmationModal from "../modal/ConfirmationModal";
+import DataConfirmedModal from "../modal/DataConfirmedModal";
 
 const EditForm = ({ onUpdate }) => {
   const { id } = useParams();
@@ -88,103 +89,21 @@ const EditForm = ({ onUpdate }) => {
   return (
     <div className="edit-form-container">
       <h2>Edit Form</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="cuenta">Cuenta:</label>
-        <input
-          type="text"
-          id="cuenta"
-          name="cuenta"
-          value={cuenta}
-          onChange={handleChange}
-          required
-        />
+      <EditFormContent
+        formData={formData}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+        onCancel={handleBackClick}
+      />
 
-        <label htmlFor="kilos">Kilos:</label>
-        <input
-          type="text"
-          id="kilos"
-          name="kilos"
-          value={kilos}
-          onChange={handleChange}
-          required
-        />
-
-        <label>Fecha:</label>
-        <input
-          type="date"
-          id="fecha"
-          name="fecha"
-          value={fecha}
-          onChange={handleChange}
-          step="1"
-          required
-        />
-
-        <label htmlFor="usuario">Usuario:</label>
-        <input
-          type="text"
-          id="usuario"
-          name="usuario"
-          value={usuario}
-          onChange={handleChange}
-          required
-        />
-
-        <div className="form-buttons">
-          <button type="submit">Update</button>
-          <button type="button" onClick={handleBackClick}>
-            Cancel
-          </button>
-          <button type="button" onClick={handleBackClick}>
-            Volver
-          </button>
-        </div>
-      </form>
-
-      <Modal
-        isOpen={isSuccessModalOpen}
-        onRequestClose={handleModalClose}
-        contentLabel="Update Success Modal"
-      >
-        <h2>Actualización Exitosa</h2>
-        <p>Datos actualizados con éxito.</p>
-        <button onClick={handleModalClose}>Cerrar</button>
-      </Modal>
-
-      <Modal
+      <SuccessModal isOpen={isSuccessModalOpen} onClose={handleModalClose} />
+      <ConfirmationModal
         isOpen={isConfirmationModalOpen}
-        onRequestClose={handleModalClose}
-        contentLabel="Update Confirmation Modal"
-      >
-        <h2>Confirmación de Actualización</h2>
-        <p>¿Quieres actualizar los siguientes datos?</p>
-        <div>
-          <strong>Cuenta:</strong> {dataToChange?.cuenta}
-        </div>
-        <div>
-          <strong>Kilos:</strong> {dataToChange?.kilos}
-        </div>
-        <div>
-          <strong>Fecha:</strong> {dataToChange?.fecha}
-        </div>
-        <div>
-          <strong>Usuario:</strong> {dataToChange?.usuario}
-        </div>
-        <button type="button" onClick={handleConfirmUpdate}>
-          Confirmar
-        </button>
-        <button onClick={handleModalClose}>Cancelar</button>
-      </Modal>
-
-      <Modal
-        isOpen={isDataConfirmedModalOpen}
-        onRequestClose={handleModalClose}
-        contentLabel="Data Confirmed Modal"
-      >
-        <h2>Datos Confirmados</h2>
-        <p>Los datos se han confirmado con éxito.</p>
-        <button onClick={handleModalClose}>Aceptar</button>
-      </Modal>
+        onClose={handleModalClose}
+        onConfirm={handleConfirmUpdate}
+        dataToChange={dataToChange}
+      />
+      <DataConfirmedModal isOpen={isDataConfirmedModalOpen} onClose={handleModalClose} />
     </div>
   );
 };

@@ -13,7 +13,6 @@ const App = () => {
         <Route path="/" element={<BuscarCuentaPorId />} />
         <Route path="/altaUsuario" element={<Formulario />} />
         <Route path="/edit/:id" element={<EditForm onUpdate= {onUpdate} />} />
-
         <Route path="/delete" element={<DeleteUser />} />
       </Routes>
     </Router>

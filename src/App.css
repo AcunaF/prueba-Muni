@@ -1,5 +1,5 @@
+/* App.css */
 .App {
-  
   text-align: center;
 }
 
@@ -25,6 +25,7 @@
   color: white;
 }
 
+/* Styles for App-link - Add more specific styles if needed */
 .App-link {
   color: #61dafb;
 }

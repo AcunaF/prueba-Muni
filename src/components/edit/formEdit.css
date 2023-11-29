@@ -1,64 +1,59 @@
-/* Estilos para el contenedor principal del formulario */
-div {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Estilos para las etiquetas y campos de entrada del formulario */
-  label {
-    display: block;
-    margin-bottom: 8px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  /* Estilos para los botones del formulario */
-  button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 5px;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Estilos para el resultado del formulario */
-  div > div {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-  }
-  
-  /* Estilos para los mensajes de resultado */
-  p {
-    margin: 0;
-    font-weight: bold;
-  }
-  
-  /* Estilos específicos para el botón de cancelar edición */
-  button[type="button"] {
-    background-color: #808080;
-  }
-  
-  button[type="button"]:hover {
-    background-color: #696969;
-  }
-  
+/* EditForm.css (o tu archivo de estilos correspondiente) */
+.edit-form-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Additional styles for nested div */
+div > div {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+p {
+  margin: 0;
+  font-weight: bold;
+}
+
+button[type="button"] {
+  background-color: #808080;
+}
+
+button[type="button"]:hover {
+  background-color: #696969;
+}
