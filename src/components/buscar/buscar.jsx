@@ -20,9 +20,6 @@ const BuscarCuentaPorId = () => {
     try {
       setLoading(true);
       const response = await axios.get(`http://localhost:3000/getdatabyid/${idBusqueda}`);
-
-      console.log("Resultado:", response.data[0]);
-      
       setCuentaEncontrada(response.data[0]);
       setError(null);
     } catch (error) {
@@ -35,19 +32,19 @@ const BuscarCuentaPorId = () => {
   };
 
   const handleCrearClick = () => {
-    // Redirigir a la ruta /altaUsuario
     navigate("/altaUsuario");
   };
 
-  const handleEditarClick = () => { 
-    navigate("/edit");
-  }
+  const handleEditarClick = () => {
+    navigate(`/edit/${cuentaEncontrada.ID}`);
+  };
+  
 
   const BackClick = () => {
     navigate("/");
   }
-  const EliminarClick = () => {
-    navigate("/delete");
+  const DeleteClick = () => {
+    navigate("/delete", { state: { id: cuentaEncontrada.ID } })
   }
 
   return (
@@ -77,7 +74,7 @@ const BuscarCuentaPorId = () => {
 
           <p>Usuario: {cuentaEncontrada.USUARIO}</p>
           <button type="button" onClick={handleEditarClick}>Editar</button>
-          <button type="button" onClick={EliminarClick}>Eliminar</button>
+          <button type="button" onClick={DeleteClick}>Eliminar</button>
           <button type="button" onClick={BackClick}>Volver</button>
         </div>
         
