@@ -1,59 +1,65 @@
-/* EditForm.css (o tu archivo de estilos correspondiente) */
+/* formEdit.css */
+
+/* Estilos para el contenedor del formulario de edición */
 .edit-form-container {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-/* Additional styles for nested div */
-div > div {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-}
-
-p {
-  margin: 0;
-  font-weight: bold;
-}
-
-button[type="button"] {
-  background-color: #808080;
-}
-
-button[type="button"]:hover {
-  background-color: #696969;
-}
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background-color: #fff;
+  }
+  
+  /* Estilos para el título del formulario de edición */
+  .edit-form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para el formulario de edición */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Estilos para las etiquetas de los campos del formulario */
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  /* Estilos para los campos de entrada del formulario */
+  input {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Estilos para los botones del formulario */
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Estilos específicos para el botón de "Update" */
+  button[type="submit"] {
+    background-color: #4caf50; /* Color verde */
+    color: #fff;
+  }
+  
+  /* Estilos específicos para los botones de "Cancel" y "Volver" */
+  button[type="button"] {
+    background-color: #ccc; /* Color gris */
+    color: #333;
+  }
+  
+  

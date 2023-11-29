@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 
+
 const DataConfirmedModal = ({ isOpen, onClose }) => {
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} contentLabel="Data Confirmed Modal">

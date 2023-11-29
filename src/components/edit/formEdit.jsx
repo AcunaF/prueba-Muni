@@ -7,6 +7,8 @@ import ConfirmationModal from "../modal/ConfirmationModal";
 import DataConfirmedModal from "../modal/DataConfirmedModal";
 
 const EditForm = ({ onUpdate }) => {
+  const [isDataConfirmed, setIsDataConfirmed] = useState(false);
+
   const { id } = useParams();
   const [formData, setFormData] = useState({
     cuenta: "",
@@ -16,7 +18,8 @@ const EditForm = ({ onUpdate }) => {
   });
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
-  const [isDataConfirmedModalOpen, setIsDataConfirmedModalOpen] = useState(false);
+  const [isDataConfirmedModalOpen, setIsDataConfirmedModalOpen] =
+    useState(false);
   const [dataToChange, setDataToChange] = useState(null);
   const navigate = useNavigate();
 
@@ -79,7 +82,7 @@ const EditForm = ({ onUpdate }) => {
         onUpdate(response.data.updatedData);
         setIsSuccessModalOpen(true);
         setIsConfirmationModalOpen(false);
-        setIsDataConfirmedModalOpen(true);
+        setIsDataConfirmed(true); // Nuevo estado
       }
     } catch (error) {
       console.error("Error al enviar la solicitud:", error.message);
@@ -97,13 +100,23 @@ const EditForm = ({ onUpdate }) => {
       />
 
       <SuccessModal isOpen={isSuccessModalOpen} onClose={handleModalClose} />
+      {isDataConfirmed && (
+        <DataConfirmedModal
+          isOpen={true /* o utiliza el estado adecuado */}
+          onClose={handleModalClose}
+        />
+      )}
+
       <ConfirmationModal
         isOpen={isConfirmationModalOpen}
         onClose={handleModalClose}
         onConfirm={handleConfirmUpdate}
         dataToChange={dataToChange}
       />
-      <DataConfirmedModal isOpen={isDataConfirmedModalOpen} onClose={handleModalClose} />
+      <DataConfirmedModal
+        isOpen={isDataConfirmedModalOpen}
+        onClose={handleModalClose}
+      />
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./formsAlta.css";
+import "../Alta/formsAlta.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 
-Modal.setAppElement("#root"); // Indica al modal el elemento principal de la aplicación
+Modal.setAppElement("#root");
 
 const Formulario = () => {
     const [cuenta, setCuenta] = useState("");
@@ -59,11 +59,10 @@ const Formulario = () => {
 
     const closeSuccessModal = () => {
         setSuccessModalIsOpen(false);
-        // Puedes realizar alguna acción adicional después de cerrar el modal si es necesario
     };
 
     return (
-        <div>
+        <div className="container">
             <h2>Crear Cuenta</h2>
             <label>
                 Cuenta:

@@ -1,46 +1,80 @@
-.container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    color: #333;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  .result-container {
-    margin-top: 20px;
-  }
-  
-  p {
-    margin: 5px 0;
-  }
-  
+/* BuscarCuentaPorId.css */
+
+/* Estilos para el contenedor principal */
+.max-w-2xl {
+  max-width: 40rem;
+  margin: auto;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Estilos para la etiqueta de ID a buscar */
+label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para los input y botones */
+input,
+button {
+  margin-top: 0.5rem;
+}
+
+/* Estilos para los botones */
+button {
+  cursor: pointer;
+}
+
+/* Estilos para el mensaje de carga */
+.text-blue-500 {
+  color: #1e40af;
+}
+
+/* Estilos para el resultado */
+.resultado {
+  margin-top: 2rem;
+}
+
+/* Estilos para los detalles de la cuenta */
+.resultado p {
+  margin-bottom: 0.5rem;
+}
+
+/* Estilos para los botones de acción */
+.resultado button {
+  margin-right: 0.5rem;
+}
+
+/* Estilos para los mensajes de error */
+.error {
+  color: #e53e3e;
+  margin-top: 1rem;
+}
+
+/* Estilos para los botones con colores personalizados */
+.bg-blue-500 {
+  background-color: #1e40af;
+}
+
+.bg-green-500 {
+  background-color: #4caf50;
+}
+
+.bg-yellow-500 {
+  background-color: #ffd700;
+}
+
+.bg-red-500 {
+  background-color: #e53e3e;
+}
+
+.bg-gray-500 {
+  background-color: #718096;
+}
+
+/* Estilos para hover en los botones */
+button:hover {
+  filter: brightness(110%);
+}
