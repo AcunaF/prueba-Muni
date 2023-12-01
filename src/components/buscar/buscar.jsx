@@ -35,9 +35,10 @@ const BuscarCuentaPorId = () => {
   };
 
   const handleEditarClick = () => {
-    navigate(`/edit/${cuentaEncontrada.ID}`);
+    navigate(`/edit/:id${cuentaEncontrada.ID}`);
   };
 
+  
   
 
   const BackClick = () => {
